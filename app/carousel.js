@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import styles from "./carousel.module.css";
+import Image from "next/image";
 
 export default function Carousel() {
 
@@ -18,7 +19,7 @@ export default function Carousel() {
         count--;
         if (count < 0) count = max;
 
-        //On téléporte de la première à la dernière image avant de réaliser la transition dans le cas où count vaut max
+        //Si count vaut max alors avant l'animation on téléporte de la première à la dernière image
         if (count === max) {
           translate(true);
           count--;
@@ -58,13 +59,13 @@ export default function Carousel() {
   return (
     <>
       <div ref={ref} className={styles.carousel}>
-        <img src="/static/images/lofi-1.jpg" alt="bg-1" />
-        <img src="/static/images/lofi-2.jpg" alt="bg-2" />
-        <img src="/static/images/lofi-3.jpg" alt="bg-3" />
-        <img src="/static/images/lofi-1.jpg" alt="bg-1" />
+        <Image src="/static/images/lofi-1.jpg" alt="" width={1180} height={668} quality={100} priority={true} />
+        <Image src="/static/images/lofi-2.jpg" alt="" width={1180} height={668} quality={100} />
+        <Image src="/static/images/lofi-3.jpg" alt="" width={1180} height={668} quality={100} />
+        <Image src="/static/images/lofi-1.jpg" alt="" width={1180} height={668} quality={100} />
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.button_container}>
         <input className={styles.button} type="button" value="Left" onClick={() => transition("left")} />
         <input className={styles.button} type="button" value="Right" onClick={() => transition("right")} />
       </div>

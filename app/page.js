@@ -1,5 +1,3 @@
-'use client';
-
 import Carousel from "./carousel";
 import styles from "./page.module.css";
 
