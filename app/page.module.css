@@ -3,29 +3,3 @@
   flex-direction: column;
   min-height: 100vh;
 }
-
-.carousel {
-  position: relative;
-  display: flex;
-  width: 100%;
-  transition: 1s;
-}
-
-.carousel img {
-  width: 100%;
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.button {
-  width: 100px;
-  height: 40px;
-}
-
-.button:hover {
-  cursor: pointer;
-}
